@@ -1,4 +1,4 @@
-# UI Capability Engine
+# Computer Use Automation System
 
 A small end-to-end computer-use automation system that demonstrates:
 
