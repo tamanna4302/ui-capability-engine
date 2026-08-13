@@ -1,0 +1,53 @@
+{
+  "run_id": "20260813T094736147631Z",
+  "run_type": "discovery",
+  "events": [
+    {
+      "timestamp": "2026-08-13T09:47:38.406214+00:00",
+      "event_type": "discovery_started",
+      "goal": "Look up member 12345 and return their current savings balance.",
+      "target": "http://127.0.0.1:5000",
+      "model": "claude-sonnet-5"
+    },
+    {
+      "timestamp": "2026-08-13T09:47:47.997965+00:00",
+      "event_type": "discovery_completed",
+      "status": "success",
+      "result": "Member 12345 (Alex Morgan) current savings balance: $4,231.44",
+      "step_count": 3
+    },
+    {
+      "timestamp": "2026-08-13T09:47:47.999299+00:00",
+      "event_type": "discovery_step",
+      "step": 1,
+      "action_type": "type",
+      "reason": "Enter the member ID to search for."
+    },
+    {
+      "timestamp": "2026-08-13T09:47:47.999775+00:00",
+      "event_type": "discovery_step",
+      "step": 2,
+      "action_type": "click",
+      "reason": "Member ID 12345 is already entered; submit search to retrieve member data."
+    },
+    {
+      "timestamp": "2026-08-13T09:47:48.000085+00:00",
+      "event_type": "discovery_step",
+      "step": 3,
+      "action_type": "complete",
+      "reason": "The savings balance is visible on the page."
+    },
+    {
+      "timestamp": "2026-08-13T09:47:48.098904+00:00",
+      "event_type": "success_evidence",
+      "screenshot": "evidence/discovery/20260813T094736147631Z/discovery_success.png"
+    },
+    {
+      "timestamp": "2026-08-13T09:47:48.099847+00:00",
+      "event_type": "artifact_created",
+      "capability": "get_savings_balance",
+      "capability_version": "1.0.0",
+      "artifact_path": "capabilities/get_savings_balance.v1.json"
+    }
+  ]
+}

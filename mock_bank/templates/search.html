@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Core Banking - Member Search</title>
+</head>
+
+<body>
+    <div>
+        <div>CORE BANKING SYSTEM</div>
+        <div>Member Servicing &gt; Member Inquiry</div>
+    </div>
+
+    <hr>
+
+    <div>
+        <strong>Member Search</strong>
+    </div>
+
+    <br>
+
+    <form action="/member" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="member-id">
+                            Member ID
+                        </label>
+                    </td>
+
+                    <td>
+                        <input
+                            id="member-id"
+                            name="member_id"
+                            type="text"
+                            value="{{ member_id or '' }}"
+                        >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+
+                    <td>
+                        <button type="submit">
+                            Search
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    {% if error %}
+        <br>
+
+        <div role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <hr>
+
+    <div>
+        Internal Use Only
+    </div>
+</body>
+</html>

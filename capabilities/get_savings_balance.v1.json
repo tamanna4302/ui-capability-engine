@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "capability_name": "get_savings_balance",
+  "capability_version": "1.0.0",
+  "description": "Looks up a member by ID and returns their current savings balance.",
+  "target_app": "mock_legacy_bank",
+  "entry_point": "http://127.0.0.1:5000/",
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "required": true,
+      "description": "Member identifier used for lookup."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "string",
+      "description": "Current savings account balance."
+    }
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "step_type": "type",
+      "target": {
+        "primary": {
+          "strategy": "label",
+          "role": null,
+          "name": null,
+          "label": "Member ID",
+          "text": null,
+          "selector": null,
+          "row_text": null,
+          "column_header": null
+        },
+        "fallbacks": []
+      },
+      "value": {
+        "literal": null,
+        "parameter": "member_id"
+      },
+      "output_name": null,
+      "checkpoint": null,
+      "description": "Enter the member identifier."
+    },
+    {
+      "id": "step_2",
+      "step_type": "click",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "role": "button",
+          "name": "Search",
+          "label": null,
+          "text": null,
+          "selector": null,
+          "row_text": null,
+          "column_header": null
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "role": null,
+            "name": null,
+            "label": null,
+            "text": "Search",
+            "selector": null,
+            "row_text": null,
+            "column_header": null
+          }
+        ]
+      },
+      "value": null,
+      "output_name": null,
+      "checkpoint": {
+        "type": "text_visible",
+        "value": "Member Details"
+      },
+      "description": "Submit the member search."
+    },
+    {
+      "id": "step_3",
+      "step_type": "extract",
+      "target": {
+        "primary": {
+          "strategy": "table_cell",
+          "role": null,
+          "name": null,
+          "label": null,
+          "text": null,
+          "selector": null,
+          "row_text": "Savings",
+          "column_header": "Current Balance"
+        },
+        "fallbacks": [
+          {
+            "strategy": "css",
+            "role": null,
+            "name": null,
+            "label": null,
+            "text": null,
+            "selector": "table:nth-of-type(2) tbody tr:nth-child(2) td:nth-child(2)",
+            "row_text": null,
+            "column_header": null
+          }
+        ]
+      },
+      "value": null,
+      "output_name": "savings_balance",
+      "checkpoint": null,
+      "description": "Extract the member's current savings balance."
+    }
+  ],
+  "success_condition": {
+    "type": "text_visible",
+    "value": "Savings"
+  },
+  "business_outcomes": [
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "description": "The supplied member ID does not exist.",
+      "detection_text": "Member not found."
+    },
+    {
+      "code": "PERMISSION_DENIED",
+      "description": "The current operator does not have permission to access this member.",
+      "detection_text": "Permission denied."
+    }
+  ],
+  "metadata": {
+    "discovery_goal": "Look up member 12345 and return their current savings balance.",
+    "discovery_result": "Member 12345 (Alex Morgan) current savings balance: $4,231.44"
+  }
+}

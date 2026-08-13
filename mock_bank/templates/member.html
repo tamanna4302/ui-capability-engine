@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Core Banking - Member Details</title>
+</head>
+
+<body>
+    <div>
+        <div>CORE BANKING SYSTEM</div>
+        <div>
+            Member Servicing &gt;
+            Member Inquiry &gt;
+            Member Details
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <strong>Member Details</strong>
+    </div>
+
+    <br>
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Member ID</td>
+                <td>{{ member_id }}</td>
+            </tr>
+
+            <tr>
+                <td>Member Name</td>
+                <td>{{ member.name }}</td>
+            </tr>
+
+            <tr>
+                <td>Status</td>
+                <td>Active</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <div>
+        <strong>Accounts</strong>
+    </div>
+
+    <br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Account Type</th>
+                <th>Current Balance</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Checking</td>
+                <td>${{ member.checking }}</td>
+            </tr>
+
+            <tr>
+                <td>Savings</td>
+                <td>${{ member.savings }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <div>
+        <a href="/">
+            Return to Member Search
+        </a>
+    </div>
+
+    <hr>
+
+    <div>
+        Internal Use Only
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "run_id": "20260813T073117540249Z",
+  "run_type": "replay",
+  "events": [
+    {
+      "timestamp": "2026-08-13T07:31:19.630279+00:00",
+      "event_type": "run_started",
+      "capability": "get_savings_balance",
+      "artifact_version": "1.0.0",
+      "entry_point": "http://127.0.0.1:5000/",
+      "inputs": {
+        "member_id": "[REDACTED]"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T07:31:19.859137+00:00",
+      "event_type": "run_completed",
+      "status": "success",
+      "result": {
+        "status": "success",
+        "outputs": {
+          "savings_balance": "$823.19"
+        }
+      }
+    }
+  ]
+}

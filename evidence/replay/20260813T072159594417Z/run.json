@@ -1,0 +1,33 @@
+{
+  "run_id": "20260813T072159594417Z",
+  "run_type": "replay",
+  "events": [
+    {
+      "timestamp": "2026-08-13T07:22:02.183874+00:00",
+      "event_type": "run_started",
+      "capability": "get_savings_balance",
+      "artifact_version": "1.0.0",
+      "entry_point": "http://127.0.0.1:5000/",
+      "inputs": {
+        "member_id": "[REDACTED]"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T07:22:02.313809+00:00",
+      "event_type": "run_completed",
+      "status": "hard_failure",
+      "result": {
+        "status": "hard_failure",
+        "code": "STEP_EXECUTION_FAILED",
+        "step": "step_2",
+        "message": "Unable to resolve target. LocatorStrategy.ROLE: matched 0 elements",
+        "outputs": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T07:22:02.398493+00:00",
+      "event_type": "failure_evidence",
+      "screenshot": "evidence/replay/20260813T072159594417Z/failure.png"
+    }
+  ]
+}

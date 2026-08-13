@@ -1,0 +1,35 @@
+{
+  "capability": "get_savings_balance",
+  "step": "step_2",
+  "reason": "Potentially risky or irreversible action detected: 'confirm transaction'.",
+  "timestamp": "20260813T095940Z",
+  "screenshot": "evidence/handoff/get_savings_balance_step_2_20260813T095940Z.png",
+  "before_state": {
+    "url": "http://127.0.0.1:5000/",
+    "title": "Core Banking - Member Search"
+  },
+  "after_state": {
+    "url": "http://127.0.0.1:5000/member",
+    "title": "Core Banking - Member Details"
+  },
+  "human_events": [
+    {
+      "type": "click",
+      "tag": "BUTTON",
+      "text": "Search",
+      "name": null,
+      "timestamp": "2026-08-13T09:59:41.708Z"
+    },
+    {
+      "type": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:5000/member",
+      "timestamp": "2026-08-13T09:59:41.736347+00:00"
+    },
+    {
+      "type": "navigation",
+      "url": "http://127.0.0.1:5000/member",
+      "timestamp": "2026-08-13T09:59:41.741322+00:00"
+    }
+  ]
+}
